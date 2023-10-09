@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+/* styles.css or styles.scss */
+.container {
+    display: flex;
+    flex-direction: column; /* Stack child elements vertically for all screen sizes */
+    height: 100vh; /* Make the container take up the full viewport height */
+  }
+  
+  .row {
+    flex-grow: 1; /* Expand the row to fill available vertical space */
+    display: flex;
+  }
+  
+  .sidebar {
+    border-right: 1px solid #ccc;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Sidebar takes up 1/3 of the available horizontal space */
+  }
+  
+  .user-profile {
+    margin-top: auto;
+  }
+  
+  .main-content {
+    flex: 2; /* Main content takes up 2/3 of the available horizontal space */
+  }
+  
+  .user-name {
+    font-size: 18px;
+  }
+  
+  .user-email {
+    font-size: 14px;
+  }
+  

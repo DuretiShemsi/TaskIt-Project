@@ -1,0 +1,36 @@
+
+  <!-- Task List Content -->
+  <div class="main-content">
+    <h1>Task List</h1>
+    <button class="btn btn-primary" (click)="toggleAddTaskForm()">Add New Task</button>
+
+    <!-- Add Task form - Only show when isAddTaskFormVisible is true -->
+    <div *ngIf="isAddTaskFormVisible">
+      <app-add-task (taskAdded)="onTaskAdded($event)"></app-add-task>
+    </div>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Due Date</th>
+          <th>Priority</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks">
+          <td>{{ task.title }}</td>
+          <td>{{ task.dueDate | date }}</td>
+          <td>{{ task.priority }}</td>
+          <td>{{ task.status }}</td>
+          <td>
+            <button class="btn btn-primary">View</button>
+            <button class="btn btn-primary">Edit</button>
+            <button class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
